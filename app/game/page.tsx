@@ -231,15 +231,16 @@ export default function GamePage() {
                   key={i}
                   style={{
                     background:
-                      matchGame.matches.find(m => m.pt === pt)?.color ??
+                     matchGame.matches.find((m: any) => m.pt === pt)?.color
                       (matchGame.selectedPt === pt ? matchGame.currentColor : '#333')
                   }}
                   onClick={() =>
-                    setMatchGame(m => ({
+                    setMatchGame((m: any) => ({
                       ...m,
                       selectedPt: pt,
                       currentColor: color(i)
                     }))
+
                   }
                 >
                   {pt}
@@ -255,11 +256,11 @@ export default function GamePage() {
                   key={i}
                   style={{
                     background:
-                      matchGame.matches.find(m => m.en === en)?.color ??
+                      matchGame.matches.find((m: any) => m.en === en)?.color ??
                       (matchGame.selectedEn === en ? matchGame.currentColor : '#333')
                   }}
                   onClick={() =>
-                    setMatchGame(m => ({
+                    setMatchGame((m: any) => ({
                       ...m,
                       selectedEn: en
                     }))
