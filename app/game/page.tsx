@@ -56,7 +56,7 @@ export default function GamePage() {
   const [finished, setFinished] = useState(false)
 
   function color(i: number) {
-    const colors = ['#2196f3', '#ffeb3b', '#f44336', '#ffffff', '#4caf50']
+    const colors = ['#2196f3', '#bfa730', '#f44336', '#bfbfbf', '#4caf50']
     return colors[i % colors.length]
   }
 
@@ -187,7 +187,19 @@ export default function GamePage() {
 
   return (
     <Container>
-      <TimerBar percent={(time / 30) * 100} />
+      <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          gap: '10px',
+          fontSize: '22px',
+          fontWeight: 'bold',
+          marginBottom: '20px'
+        }}>
+          <span style={{ color: '#4caf50' }}>⏱️</span>
+          <span>{time}s</span>
+        </div>
+
 
       {/* ---------------- MULTIPLE CHOICE ---------------- */}
       {item.idQuestion && index === 0 && (
@@ -260,7 +272,16 @@ export default function GamePage() {
         <Card>
           <h2>Combine as palavras</h2>
 
-          <div style={{ display: 'flex', gap: 40 }}>
+          <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: '100px',          
+                padding: '2rem'
+              }}
+            >
+
             {/* ----------- PT ----------- */}
             <div>
               <strong>Português</strong>
@@ -340,6 +361,8 @@ export default function GamePage() {
               }))
             }}
           />
+
+          <h2></h2>
 
           {/* ----------- CONFIRMAR ----------- */}
           <Button
