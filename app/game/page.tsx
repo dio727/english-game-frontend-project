@@ -89,15 +89,39 @@ export default function GamePage() {
   if (!data.length) return <Container>Carregando...</Container>
 
   if (finished) {
-    return (
-      <Container>
-        <FinalScoreCard>
-          <h1>Fim de jogo!</h1>
-          <h2>{score} pontos</h2>
-        </FinalScoreCard>
-      </Container>
-    )
-  }
+  return (
+    <Container>
+      <FinalScoreCard>
+        <h1>Game Over</h1>
+        <h2>{score} points</h2>
+
+        <div style={{ marginTop: '30px', display: 'flex', gap: '20px', justifyContent: 'center' }}>
+          <Button
+            text="Return to Menu"
+            width="160px"
+            height="70px"
+            background="#555"
+            color="#fff"
+            borderColor="#777"
+            onClick={() => window.location.href = '/home'}
+          />
+
+          <Button
+            text="View Ranking"
+            width="160px"
+            height="70px"
+            background="#4caf50"
+            color="#fff"
+            borderColor="#4caf50"
+            onClick={() => window.location.href = '/ranking'}
+          />
+        </div>
+
+      </FinalScoreCard>
+    </Container>
+  )
+}
+
 
   const item = data[index]
 
