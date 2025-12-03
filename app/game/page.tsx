@@ -50,7 +50,7 @@ export default function GamePage() {
   const [data, setData] = useState<any[]>([])
   const [index, setIndex] = useState(0)
   const [score, setScore] = useState(0)
-  const [time, setTime] = useState(30)
+  const [time, setTime] = useState(60)
   const [selectedWords, setSelectedWords] = useState<string[]>([])
   const [matchGame, setMatchGame] = useState<MatchGame | null>(null)
   const [finished, setFinished] = useState(false)
@@ -81,7 +81,7 @@ export default function GamePage() {
   }, [time])
 
   function restartTimer() {
-    setTime(30)
+    setTime(60)
   }
 
   // ---------------- WORD MATCH: MONTAR JOGO ----------------
