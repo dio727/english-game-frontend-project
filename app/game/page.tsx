@@ -11,6 +11,7 @@ import {
   FinalScoreCard
 } from './styles'
 import Button from '../components/Button'
+import { toast } from 'react-toastify'
 
 export default function GamePage() {
   const [data, setData] = useState<any[]>([])
@@ -58,10 +59,15 @@ export default function GamePage() {
   function handleCorrect() {
     const bonus = Math.floor(time * 2)
     setScore(score + 100 + bonus)
+
+    const points = 100 + bonus
+
+    toast.success(`✔ Acertou! +${points} pontos 🔥`)
     next()
   }
 
   function handleWrong() {
+    toast.error('❌ Errou! 💀')
     next()
   }
 
