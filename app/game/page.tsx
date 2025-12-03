@@ -231,8 +231,8 @@ export default function GamePage() {
                   key={i}
                   style={{
                     background:
-                     matchGame.matches.find((m: any) => m.pt === pt)?.color
-                      (matchGame.selectedPt === pt ? matchGame.currentColor : '#333')
+                    matchGame.matches.find((m: any) => m.pt === pt)?.color ??
+                    (matchGame.selectedPt === pt ? matchGame.currentColor : '#333')
                   }}
                   onClick={() =>
                     setMatchGame((m: any) => ({
