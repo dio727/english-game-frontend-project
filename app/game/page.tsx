@@ -283,7 +283,7 @@ export default function GamePage() {
               onClick={() => {
                 if (!matchGame.selectedPt || !matchGame.selectedEn) return
 
-                setMatchGame(m => ({
+                setMatchGame((m: any) => ({
                   ...m,
                   matches: [
                     ...m.matches,
@@ -306,7 +306,7 @@ export default function GamePage() {
             onClick={() => {
               const correct = matchGame.original.every((pair: any) =>
                 matchGame.matches.some(
-                  m => m.pt === pair.portuguese && m.en === pair.english
+                  (m: any) => m.pt === pair.portuguese && m.en === pair.english
                 )
               )
 
